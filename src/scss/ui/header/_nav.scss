@@ -1,0 +1,27 @@
+@use '../base/vars' as v;
+@use '../base/mixins' as m;
+
+.navigation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    // Para que la barra de navegación ocupe el 100% de ancho (por tanto el botón):
+    width: 100%;
+
+    @include m.desktop {
+        flex-direction: row;
+        width: auto;
+    }
+
+    &__link{
+        font-size: 2rem;
+        font-weight: 700;
+        color: v.$black;
+
+        &--register{
+            @include m.btn(v.$main-color, v.$white);
+        }
+    }
+}
